@@ -16,6 +16,20 @@
     <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>   
 </head>
 <body>
+<?php
+	if (isset($_SESSION["email"])) {
+?>
+<div style="text-align: -webkit-center;">
+    Hallo <?php echo $_SESSION["nama"]; ?> , selamat datang kembali di permainan ini!!! <br><br>
+    <a href="game.php" class = "btn btn-primary">[Start Game]</a> <br> <br>
+    Bukan Anda? <a href="reset.php" class = " btn btn-primary">(klik di sini)</a> 
+</div>
+
+<?php
+
+	} else {
+
+?>
     <div style="text-align: -webkit-center;">
         <form action="game.php" method="post">
         <h4>Masukkan Nama :</h4>
@@ -31,5 +45,9 @@
             </table>  
             <input type="submit" name="mulai" value="Mulai"/>     
         </form>
+    </div>
+<?php
+    }
+?>
 </body>
 </html>
