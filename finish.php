@@ -7,16 +7,7 @@ $db = new db();
     $lives = $_SESSION['lives'];
     $skor = $_SESSION['skor'];
     $email = $_SESSION['email'];
-
-
-    $exist = mysqli_query($db->con, "SELECT * FROM tabel WHERE email = '".$email."'") or exit(mysqli_error($db->con));
-    
-    if(mysqli_num_rows($exist)) {
-        $db->updatedata($nama, $email, $skor);
-    } else {
-        $db->insertdata($nama, $email, $skor);
-
-    }
+    $db->insertdata($nama, $email, $skor);
 
 ?>
 
@@ -63,6 +54,3 @@ $db = new db();
     </div>
 </body>
 </html>
-<?php
-session_destroy();
-?>
