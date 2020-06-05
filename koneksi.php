@@ -4,9 +4,9 @@ class db
 {
     
     var $host = 'localhost';
-    var $user = 'root';
-    var $pass = '';
-    var $name = 'game';
+    var $user = 'id13972877_haqi';
+    var $pass = 'Haqi1.2.3.4.5';
+    var $name = 'id13972877_game';
     var $con;
 
     function __construct()
@@ -15,6 +15,7 @@ class db
     }
 
     function insertdata($nama, $email, $skor){
+
         $sql = "insert into tabel values('$nama', '$email', '$skor')";
         mysqli_query($this->con, $sql);
 	}
